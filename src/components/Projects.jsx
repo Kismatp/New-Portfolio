@@ -7,8 +7,8 @@ function Projects() {
       description: 'A traditional Tiger-Goat strategy game built with HTML, CSS, and JavaScript.',
       tech: ['HTML', 'CSS', 'JavaScript'],
       github: 'https://github.com/Kismatp/Baghchaal--Nepali-Board-Game',
-      live: 'https://example.com',
-      image: null
+      live: 'https://baghchaal.kismatpoudel.com.np/',
+      image: '/images/Baghchaal.jpg'
     },
     {
       id: 2,
@@ -16,41 +16,41 @@ function Projects() {
       description: 'A responsive and accessible landing page for a fictional creative digital agency.',
       tech: ['HTML', 'CSS', 'JavaScript'],
       github: 'https://github.com/Kismatp/studio-terra-landing-page',
-      live: 'https://example.com',
-      image: null
+      live: 'https://studio-terra.kismatpoudel.com.np/',
+      image: '/images/studio-terra.jpg'
     },
     {
       id: 3,
-      title: 'Book Management System',
-      description: 'A full-stack book management app with CRUD operations, validation, and JSON storage.',
-      tech: ['Node.js', 'Express', 'JavaScript', 'JSON'],
-      github: 'https://github.com/Kismatp/book-management-system',
-      live: 'https://example.com',
-      image: null
-    },
-    {
-      id: 4,
-      title: 'Tic Tac Toe',
-      description: 'A responsive two-player Tic Tac Toe game with winner and draw detection.',
-      tech: ['HTML', 'CSS', 'JavaScript'],
-      github: 'https://github.com/Kismatp/tic-tac-toe',
-      live: 'https://example.com',
-      image: null
-    },
-    {
-      id: 5,
       title: 'Expense Tracker',
       description: 'A responsive expense tracker that manages and stores expenses using Local Storage.',
       tech: ['HTML', 'CSS', 'JavaScript', 'Local Storage'],
       github: 'https://github.com/Kismatp/Expense-Tracker',
-      live: 'https://example.com',
-      image: null
+      live: 'https://expense-tracker.kismatpoudel.com.np/',
+      image: '/images/expense-tracker.jpg'
+    },
+    {
+      id: 4,
+      title: 'Book Management System',
+      description: 'A full-stack book management app with CRUD operations, validation, and JSON storage.',
+      tech: ['Node.js', 'Express', 'JavaScript', 'JSON'],
+      github: 'https://github.com/Kismatp/book-management-system',
+      live: 'https://github.com/Kismatp/book-management-system',
+      image: 'null'
+    },
+    {
+      id: 5,
+      title: 'Tic Tac Toe',
+      description: 'A responsive two-player Tic Tac Toe game with winner and draw detection.',
+      tech: ['HTML', 'CSS', 'JavaScript'],
+      github: 'https://github.com/Kismatp/tic-tac-toe',
+      live: 'tic-tac-toe.kismatpoudel.com.np',
+      image: '/images/tic-tac-toe.jpg'
     },
     
   ]
 
   const [showAll, setShowAll] = React.useState(false)
-  const visibleProjects = showAll ? projects : projects.slice(0, 4)
+  const visibleProjects = showAll ? projects : projects.slice(0, 2)
 
   return (
     <section id='projects' className='py-20 px-6 bg-white dark:bg-gray-950 animate-fade-in-up'>
@@ -63,9 +63,9 @@ function Projects() {
           {visibleProjects.map((project, index) => (
             <div key={project.id} className='bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-700 p-6 hover:border-blue-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-fade-in-up' style={{ animationDelay: `${index * 100}ms` }}>
               
-                <div className='h-40 mb-4 rounded-lg bg-gray-200 dark:bg-gray-800 flex items-center justify-center overflow-hidden'>
+                <div className='aspect-video mb-4 rounded-lg bg-gray-100 dark:bg-gray-800 overflow-hidden'>
                   {project.image ? (
-                    <img src={project.image} alt={project.title} className='w-full h-full object-cover hover:scale-105 transition-transform duration-500' />
+                    <img src={project.image} alt={project.title} className='w-full h-full object-contain hover:scale-105 transition-transform duration-500' />
                   ) : (
                     <span className='text-gray-400 dark:text-gray-500'>Project Image</span>
                   )}
