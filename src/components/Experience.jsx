@@ -8,14 +8,14 @@ function Experience() {
       company: 'Code for Nepal',
       period: '2025 – 2026',
       description: 'Competitively selected for an intensive data science fellowship, accelerating expertise in Python, exploratory data analysis (EDA), and practical machine learning pipeline',
-    },
-    {
-      id: 2,
-      role: 'Full Stack Development Intern',
-      company: 'Decodelabs',
-      period: 'Aug 2026 – Sep 2026',
-      description: 'Full stack development internship',
     }
+    // {
+    //   id: 2,
+    //   role: 'Full Stack Development Intern',
+    //   company: 'Decodelabs',
+    //   period: 'Aug 2026 – Sep 2026',
+    //   description: 'Full stack development internship',
+    // }
   ]
 
   return (

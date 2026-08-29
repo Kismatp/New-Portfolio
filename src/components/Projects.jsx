@@ -3,49 +3,50 @@ function Projects() {
   const projects = [
     {
       id: 1,
-      title: 'Task Manager App',
-      description: 'A React app to add, delete, and mark tasks complete. Uses useState for state management.',
-      tech: ['React', 'useState', 'CSS'],
+      title: 'Baagh-Chaal Game',
+      description: 'A traditional Tiger-Goat strategy game built with HTML, CSS, and JavaScript.',
+      tech: ['HTML', 'CSS', 'JavaScript'],
       github: 'https://github.com',
       live: 'https://example.com',
       image: null
     },
     {
       id: 2,
-      title: 'Weather Dashboard',
-      description: 'Fetches weather data from API using useEffect. Shows current weather and 5-day forecast.',
-      tech: ['React', 'useEffect', 'API', 'Tailwind'],
+      title: 'Studio Terra Landing Page',
+      description: 'A responsive and accessible landing page for a fictional creative digital agency.',
+      tech: ['HTML', 'CSS', 'JavaScript'],
       github: 'https://github.com',
       live: 'https://example.com',
       image: null
     },
     {
       id: 3,
-      title: 'E-commerce Cart',
-      description: 'Shopping cart with add/remove items, quantity update, and total calculation.',
-      tech: ['React', 'useState', 'Props', 'Context API'],
+      title: 'Book Management System',
+      description: 'A full-stack book management app with CRUD operations, validation, and JSON storage.',
+      tech: ['Node.js', 'Express', 'JavaScript', 'JSON'],
       github: 'https://github.com',
       live: 'https://example.com',
       image: null
     },
     {
-      id: 3,
-      title: 'E-commerce Cart',
-      description: 'Shopping cart with add/remove items, quantity update, and total calculation.',
-      tech: ['React', 'useState', 'Props', 'Context API'],
+      id: 4,
+      title: 'Tic Tac Toe',
+      description: 'A responsive two-player Tic Tac Toe game with winner and draw detection.',
+      tech: ['HTML', 'CSS', 'JavaScript'],
       github: 'https://github.com',
       live: 'https://example.com',
       image: null
     },
     {
-      id: 3,
-      title: 'E-commerce Cart',
-      description: 'Shopping cart with add/remove items, quantity update, and total calculation.',
-      tech: ['React', 'useState', 'Props', 'Context API'],
+      id: 5,
+      title: 'Expense Tracker',
+      description: 'A responsive expense tracker that manages and stores expenses using Local Storage.',
+      tech: ['HTML', 'CSS', 'JavaScript', 'Local Storage'],
       github: 'https://github.com',
       live: 'https://example.com',
       image: null
-    }
+    },
+    
   ]
 
   const [showAll, setShowAll] = React.useState(false)
