@@ -19,9 +19,9 @@ function Experience() {
   ]
 
   return (
-    <section id='experience' className='py-20 px-6 bg-white dark:bg-gray-950'>
+    <section id='experience' className='py-20 px-6 bg-white dark:bg-gray-950 animate-fade-in-up'>
       <div className='max-w-7xl mx-auto'>
-        <h2 className='text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center'>
+        <h2 className='text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center animate-fade-in'>
           Experience
         </h2>
 
@@ -38,7 +38,7 @@ function Experience() {
                 <div className='w-2 h-2 rounded-full bg-white' />
               </div>
 
-              <div className='bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-700 p-6 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all'>
+              <div className='bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-700 p-6 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-xl hover:-translate-x-1 transition-all duration-300'>
                 <span className='inline-block px-3 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full mb-3'>
                   {exp.period}
                 </span>

@@ -6,21 +6,21 @@ function Navbar() {
   const { darkMode, toggleDarkMode } = useTheme()
 
   return (
-    <nav className='fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700'>
+    <nav className='fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 animate-fade-in'>
       <div className='max-w-7xl mx-auto h-16 flex items-center justify-between px-6'>
-        <a href='#home' className='text-2xl font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition'>Kismat Poudel</a>
+        <a href='#home' className='text-2xl font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:scale-105 transition-all duration-200'>Kismat Poudel</a>
 
         <div className='hidden md:flex items-center gap-8'>
-          <a href='#home' className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'>Home</a>
-          <a href='#about' className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'>About</a>
-          <a href='#projects' className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'>Projects</a>
-          <a href='#certifications' className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'>Certifications</a>
-          <a href='#experience' className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'>Experience</a>
-          <a href='#contact' className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'>Contact</a>
+          <a href='#home' className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 dark:after:bg-blue-400 after:transition-all hover:after:w-full'>Home</a>
+          <a href='#about' className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 dark:after:bg-blue-400 after:transition-all hover:after:w-full'>About</a>
+          <a href='#projects' className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 dark:after:bg-blue-400 after:transition-all hover:after:w-full'>Projects</a>
+          <a href='#certifications' className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 dark:after:bg-blue-400 after:transition-all hover:after:w-full'>Certifications</a>
+          <a href='#experience' className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 dark:after:bg-blue-400 after:transition-all hover:after:w-full'>Experience</a>
+          <a href='#contact' className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 dark:after:bg-blue-400 after:transition-all hover:after:w-full'>Contact</a>
 
           <button
             onClick={toggleDarkMode}
-            className='p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition'
+            className='p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 hover:scale-110 transition-all duration-200'
             aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
           >
             {darkMode ? (
@@ -38,23 +38,23 @@ function Navbar() {
         <div className='md:hidden px-6 pb-4'>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className='w-full text-left p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800'
+            className='w-full text-left p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
           >
             {mobileOpen ? '✕ Close' : '☰ Menu'}
           </button>
 
           {mobileOpen && (
-            <div className='mt-4 space-y-3 pt-4 border-t border-gray-200 dark:border-gray-700'>
-              <a href='#home' className='block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400' onClick={() => setMobileOpen(false)}>Home</a>
-              <a href='#about' className='block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400' onClick={() => setMobileOpen(false)}>About</a>
-              <a href='#projects' className='block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400' onClick={() => setMobileOpen(false)}>Projects</a>
-              <a href='#certifications' className='block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400' onClick={() => setMobileOpen(false)}>Certifications</a>
-              <a href='#experience' className='block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400' onClick={() => setMobileOpen(false)}>Experience</a>
-              <a href='#contact' className='block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400' onClick={() => setMobileOpen(false)}>Contact</a>
+            <div className='mt-4 space-y-3 pt-4 border-t border-gray-200 dark:border-gray-700 animate-fade-in'>
+              <a href='#home' className='block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:pl-2 transition-all' onClick={() => setMobileOpen(false)}>Home</a>
+              <a href='#about' className='block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:pl-2 transition-all' onClick={() => setMobileOpen(false)}>About</a>
+              <a href='#projects' className='block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:pl-2 transition-all' onClick={() => setMobileOpen(false)}>Projects</a>
+              <a href='#certifications' className='block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:pl-2 transition-all' onClick={() => setMobileOpen(false)}>Certifications</a>
+              <a href='#experience' className='block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:pl-2 transition-all' onClick={() => setMobileOpen(false)}>Experience</a>
+              <a href='#contact' className='block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:pl-2 transition-all' onClick={() => setMobileOpen(false)}>Contact</a>
 
               <button
                 onClick={toggleDarkMode}
-                className='w-full flex items-center justify-between p-2 mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                className='w-full flex items-center justify-between p-2 mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors'
               >
                 <span>{darkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}</span>
               </button>
