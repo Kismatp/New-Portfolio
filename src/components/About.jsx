@@ -20,9 +20,8 @@ function About() {
               Hi, I'm <span className='text-blue-600 dark:text-blue-400'>Kismat Poudel</span>
             </h3>
             <p className='text-gray-600 dark:text-gray-300 mb-6 leading-relaxed'>
-              Frontend developer passionate about building clean, accessible 
-              user interfaces with React. Currently learning and building 
-              projects to grow my skills.
+            Computer Engineer interested in software development, machine learning, and web technologies. Passionate about building practical, user-focused applications and learning through hands-on projects. Continuously exploring new technologies while strengthening problem-solving and development skills.
+
             </p>
             
             <div className='grid grid-cols-3 gap-6 mb-8'>
