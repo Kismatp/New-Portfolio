@@ -2,11 +2,11 @@ import React from 'react'
 
 function Certifications() {
   const certifications = [
-    { id: 1, title: 'React Basics', image: '/images/Thumbnail_pes.png' },
-    { id: 2, title: 'JavaScript Algorithms', image: '/images/js-cert.png' },
-    { id: 3, title: 'Responsive Web Design', image: '/images/rwd-cert.png' },
-    { id: 4, title: 'Frontend Libraries', image: '/images/Thumbnail_pes.png' },
-    { id: 5, title: 'Data Analysis', image: '/images/Thumbnail_pes.png' },
+    // { id: 1, title: 'React Basics', image: '/images/Thumbnail_pes.png' },
+    // { id: 2, title: 'JavaScript Algorithms', image: '/images/js-cert.png' },
+    // { id: 3, title: 'Responsive Web Design', image: '/images/rwd-cert.png' },
+    // { id: 4, title: 'Frontend Libraries', image: '/images/Thumbnail_pes.png' },
+    // { id: 5, title: 'Data Analysis', image: '/images/Thumbnail_pes.png' },
     
   ]
 
