@@ -49,7 +49,7 @@ function Contact() {
                 <div className='w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-xl hover:scale-110 transition-transform duration-200'>📧</div>
                 <div>
                   <p className='text-sm text-gray-500 dark:text-gray-400'>Email</p>
-                  <p className='text-gray-900 dark:text-white'>Let's Connect</p>
+                  <p className='text-gray-900 dark:text-white'>Kismatpaudel11@gmail.com</p>
                 </div>
               </a>
 

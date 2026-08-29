@@ -6,8 +6,8 @@ function Experience() {
       id: 1,
       role: 'DataCamp Fellow',
       company: 'Code for Nepal',
-      period: '2025 – 2026',
-      description: 'Competitively selected for an intensive data science fellowship, accelerating expertise in Python, exploratory data analysis (EDA), and practical machine learning pipeline',
+      period: 'June 2025 – Jan 2026',
+      description: 'Selected for an intensive data science fellowship, gaining experience in Python, exploratory data analysis (EDA), and practical machine learning pipelines.',
     }
     // {
     //   id: 2,

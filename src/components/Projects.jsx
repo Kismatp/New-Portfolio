@@ -1,17 +1,9 @@
 import React from 'react'
 function Projects() {
   const projects = [
+    
     {
       id: 1,
-      title: 'Baagh-Chaal Game',
-      description: 'A traditional Tiger-Goat strategy game built with HTML, CSS, and JavaScript.',
-      tech: ['HTML', 'CSS', 'JavaScript'],
-      github: 'https://github.com/Kismatp/Baghchaal--Nepali-Board-Game',
-      live: 'https://baghchaal.kismatpoudel.com.np/',
-      image: '/images/Baghchaal.jpg'
-    },
-    {
-      id: 2,
       title: 'Studio Terra Landing Page',
       description: 'A responsive and accessible landing page for a fictional creative digital agency.',
       tech: ['HTML', 'CSS', 'JavaScript'],
@@ -20,7 +12,7 @@ function Projects() {
       image: '/images/studio-terra.jpg'
     },
     {
-      id: 3,
+      id: 2,
       title: 'Expense Tracker',
       description: 'A responsive expense tracker that manages and stores expenses using Local Storage.',
       tech: ['HTML', 'CSS', 'JavaScript', 'Local Storage'],
@@ -29,13 +21,22 @@ function Projects() {
       image: '/images/expense-tracker.jpg'
     },
     {
+      id: 3,
+      title: 'Baagh-Chaal Game',
+      description: 'A traditional Tiger-Goat strategy game built with HTML, CSS, and JavaScript.',
+      tech: ['HTML', 'CSS', 'JavaScript'],
+      github: 'https://github.com/Kismatp/Baghchaal--Nepali-Board-Game',
+      live: 'https://baghchaal.kismatpoudel.com.np/',
+      image: '/images/Baghchaal.jpg'
+    },
+    {
       id: 4,
       title: 'Book Management System',
       description: 'A full-stack book management app with CRUD operations, validation, and JSON storage.',
       tech: ['Node.js', 'Express', 'JavaScript', 'JSON'],
       github: 'https://github.com/Kismatp/book-management-system',
       live: 'https://github.com/Kismatp/book-management-system',
-      image: 'null'
+      image: '/images/book-management-system.png'
     },
     {
       id: 5,
@@ -50,7 +51,7 @@ function Projects() {
   ]
 
   const [showAll, setShowAll] = React.useState(false)
-  const visibleProjects = showAll ? projects : projects.slice(0, 2)
+  const visibleProjects = showAll ? projects : projects.slice(0, 3)
 
   return (
     <section id='projects' className='py-20 px-6 bg-white dark:bg-gray-950 animate-fade-in-up'>
@@ -59,7 +60,7 @@ function Projects() {
           Projects
         </h2>
 
-        <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-6'>
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
           {visibleProjects.map((project, index) => (
             <div key={project.id} className='bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-700 p-6 hover:border-blue-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-fade-in-up' style={{ animationDelay: `${index * 100}ms` }}>
               

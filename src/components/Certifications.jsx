@@ -1,26 +1,33 @@
 import React from 'react'
 
 function Certifications() {
+  // const certifications = [
+  //   // { id: 1, title: 'React Basics', image: '/images/Thumbnail_pes.png' },
+  //   // { id: 2, title: 'JavaScript Algorithms', image: '/images/js-cert.png' },
+  //   // { id: 3, title: 'Responsive Web Design', image: '/images/rwd-cert.png' },
+  //   // { id: 4, title: 'Frontend Libraries', image: '/images/Thumbnail_pes.png' },
+  //   // { id: 5, title: 'Data Analysis', image: '/images/Thumbnail_pes.png' },
+  //   
+  // ]
+
   const certifications = [
-    // { id: 1, title: 'React Basics', image: '/images/Thumbnail_pes.png' },
-    // { id: 2, title: 'JavaScript Algorithms', image: '/images/js-cert.png' },
-    // { id: 3, title: 'Responsive Web Design', image: '/images/rwd-cert.png' },
-    // { id: 4, title: 'Frontend Libraries', image: '/images/Thumbnail_pes.png' },
-    // { id: 5, title: 'Data Analysis', image: '/images/Thumbnail_pes.png' },
-    
+    'Data Science with Python',
+    'Deep Learning with Python',
+    'AI for Beginners',
+    'Introduction to Cybersecurity Awareness',
   ]
 
-  const [showAll, setShowAll] = React.useState(false)
-  const visibleCerts = showAll ? certifications : certifications.slice(0, 3)
+  // const [showAll, setShowAll] = React.useState(false)
+  // const visibleCerts = showAll ? certifications : certifications.slice(0, 3)
 
   return (
-    <section id='certifications' className='py-20 px-6 bg-gray-50 dark:bg-gray-950 animate-fade-in-up'>
+    <section id='certifications' className='py-20 px-6 bg-gray-50 dark:bg-gray-950 animate-fade-in-up  border-gray-900 dark:border-gray-700'>
       <div className='max-w-7xl mx-auto'>
         <h2 className='text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center animate-fade-in'>
           Certifications
         </h2>
 
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
+        {/* <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
           {visibleCerts.map((cert, index) => (
             <div key={cert.id} className='bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-700 p-6 hover:border-blue-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-fade-in-up' style={{ animationDelay: `${index * 100}ms` }}>
               <h3 className='text-lg font-semibold text-gray-900 dark:text-white text-center mb-4'>{cert.title}</h3>
@@ -62,7 +69,15 @@ function Certifications() {
               </svg>
             </button>
           </div>
-        )}
+        )} */}
+
+        <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-4'>
+          {certifications.map((cert, index) => (
+            <div key={index} className='bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-700 p-6 hover:border-blue-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-fade-in-up' style={{ animationDelay: `${index * 100}ms` }}>
+              <h3 className='text-lg font-semibold text-gray-900 dark:text-white text-center'>{cert}</h3>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

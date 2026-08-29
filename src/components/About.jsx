@@ -31,11 +31,11 @@ function About() {
                 <p className='text-sm text-gray-500 dark:text-gray-400'>Years Learning</p>
               </div>
               <div className='text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow duration-200'>
-                <p className='text-2xl font-bold text-blue-600 dark:text-blue-400'>10+</p>
+                <p className='text-2xl font-bold text-blue-600 dark:text-blue-400'>6+</p>
                 <p className='text-sm text-gray-500 dark:text-gray-400'>Projects Built</p>
               </div>
               <div className='text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow duration-200'>
-                <p className='text-2xl font-bold text-blue-600 dark:text-blue-400'>5+</p>
+                <p className='text-2xl font-bold text-blue-600 dark:text-blue-400'>6+</p>
                 <p className='text-sm text-gray-500 dark:text-gray-400'>Technologies</p>
               </div>
             </div>
@@ -44,7 +44,7 @@ function About() {
               <a href='#contact' className='bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200'>
                 Get In Touch
               </a>
-              <a href='/CV_Kismat_Poudel.pdf' className='border-2 border-blue-600 text-blue-600 dark:text-blue-400 px-6 py-2 rounded-lg hover:bg-blue-50 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200'>
+              <a href='/CV_Kismat_Poudel.pdf' download className='border-2 border-blue-600 text-blue-600 dark:text-blue-400 px-6 py-2 rounded-lg hover:bg-blue-50 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200'>
                 Download Resume
               </a>
             </div>
