@@ -44,7 +44,7 @@ function Projects() {
       description: 'A responsive two-player Tic Tac Toe game with winner and draw detection.',
       tech: ['HTML', 'CSS', 'JavaScript'],
       github: 'https://github.com/Kismatp/tic-tac-toe',
-      live: 'tic-tac-toe.kismatpoudel.com.np',
+      live: 'https://tic-tac-toe.kismatpoudel.com.np/',
       image: '/images/tic-tac-toe.jpg'
     },
     
