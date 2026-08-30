@@ -15,7 +15,12 @@ function Contact() {
         service_id: 'service_6ac5ebc',
         template_id: 'template_6zd1o4b',
         user_id: 'a5lHqh3r1GcfPDmCM',
-        template_params: { from_name: form.name, from_email: form.email, message: form.message }
+        template_params: {
+        name: form.name,
+        email: form.email,
+        message: form.message,
+        time: new Date().toLocaleString()
+        }
       })
     })
 
