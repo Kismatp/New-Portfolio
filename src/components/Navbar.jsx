@@ -1,68 +1,132 @@
-import React, { useState } from 'react'
-import { useTheme } from '../context/ThemeContext'
+import React, { useState, useEffect } from 'react'
+import { useTheme } from '../context/useTheme'
+
+const links = [
+  { href: '#home', label: 'Home' },
+  { href: '#about', label: 'About' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#contact', label: 'Contact' },
+]
 
 function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const { darkMode, toggleDarkMode } = useTheme()
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    if (window.innerWidth >= 768) setMobileOpen(false)
+    const onResize = () => { if (window.innerWidth >= 768) setMobileOpen(false) }
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [mobileOpen])
+
   return (
-    <nav className='fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 animate-fade-in'>
-      <div className='max-w-7xl mx-auto h-16 flex items-center justify-between px-6'>
-        <a href='#home' className='text-2xl font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:scale-105 transition-all duration-200'>Kismat Poudel</a>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-normal ease-out-expo
+        ${scrolled
+          ? 'bg-[var(--color-bg)]/85 backdrop-blur-xl border-b border-[var(--color-border)]'
+          : 'bg-transparent border-b border-transparent'}`}
+      role="banner"
+    >
+      <div className='container flex h-16 items-center justify-between'>
+        {/* Logo */}
+        <a
+          href='#home'
+          className='font-semibold tracking-tight text-fg hover:text-accent transition-colors duration-fast focus-ring flex items-center gap-2'
+          aria-label='Kismat Poudel - Home'
+        >
+          <span className='text-accent font-display'>Kismat</span>
+          <span className='text-fg'>Poudel</span>
+        </a>
 
-        <div className='hidden md:flex items-center gap-8'>
-          <a href='#home' className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 dark:after:bg-blue-400 after:transition-all hover:after:w-full'>Home</a>
-          <a href='#about' className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 dark:after:bg-blue-400 after:transition-all hover:after:w-full'>About</a>
-          <a href='#projects' className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 dark:after:bg-blue-400 after:transition-all hover:after:w-full'>Projects</a>
-          <a href='#certifications' className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 dark:after:bg-blue-400 after:transition-all hover:after:w-full'>Certifications</a>
-          <a href='#experience' className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 dark:after:bg-blue-400 after:transition-all hover:after:w-full'>Experience</a>
-          <a href='#contact' className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 dark:after:bg-blue-400 after:transition-all hover:after:w-full'>Contact</a>
+        {/* Desktop nav */}
+        <nav className='hidden md:flex items-center gap-6' aria-label='Main navigation'>
+          {links.map(({ href, label }) => (
+            <a
+              key={href}
+              href={href}
+              className='text-sm font-medium text-fg-subtle hover:text-fg transition-colors duration-fast focus-ring rounded-sm px-2 py-1 -mx-1 relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-0.5 after:bg-accent after:transition-all after:duration-normal hover:after:w-full'
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
 
+        {/* Right controls */}
+        <div className='flex items-center gap-2'>
           <button
             onClick={toggleDarkMode}
-            className='p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 hover:scale-110 transition-all duration-200'
             aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+            className='w-10 h-10 flex items-center justify-center rounded-md text-fg-subtle hover:text-fg hover:bg-[var(--color-bg-muted)] transition-all duration-fast focus-ring relative overflow-hidden'
           >
-            {darkMode ? (
-              <svg className='w-5 h-5 text-yellow-500' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z' />
+            <span className='relative z-10 transition-transform duration-300 ease-spring'>
+              {darkMode ? (
+                <svg className='w-5 h-5' fill='none' stroke='currentColor' strokeWidth={2} viewBox='0 0 24 24' aria-hidden='true'>
+                  <circle cx='12' cy='12' r='5'/>
+                  <path strokeLinecap='round' d='M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42'/>
+                </svg>
+              ) : (
+                <svg className='w-5 h-5' fill='none' stroke='currentColor' strokeWidth={2} viewBox='0 0 24 24' aria-hidden='true'>
+                  <path strokeLinecap='round' d='M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z'/>
+                </svg>
+              )}
+            </span>
+          </button>
+
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setMobileOpen(v => !v)}
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileOpen}
+            aria-controls='mobile-menu'
+            className='md:hidden w-10 h-10 flex items-center justify-center rounded-md text-fg-subtle hover:text-fg hover:bg-[var(--color-bg-muted)] transition-all duration-fast focus-ring'
+          >
+            {mobileOpen ? (
+              <svg className='w-5 h-5' fill='none' stroke='currentColor' strokeWidth={2} viewBox='0 0 24 24' aria-hidden='true'>
+                <path strokeLinecap='round' d='M6 18L18 6M6 6l12 12'/>
               </svg>
             ) : (
-              <svg className='w-5 h-5 text-gray-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z' />
+              <svg className='w-5 h-5' fill='none' stroke='currentColor' strokeWidth={2} viewBox='0 0 24 24' aria-hidden='true'>
+                <path strokeLinecap='round' d='M4 6h16M4 12h16M4 18h16'/>
               </svg>
             )}
           </button>
         </div>
-
-        <div className='md:hidden px-6 pb-4'>
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className='w-full text-left p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
-          >
-            {mobileOpen ? '✕ Close' : '☰ Menu'}
-          </button>
-
-          {mobileOpen && (
-            <div className='mt-4 space-y-3 pt-4 border-t border-gray-200 dark:border-gray-700 animate-fade-in'>
-              <a href='#home' className='block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:pl-2 transition-all' onClick={() => setMobileOpen(false)}>Home</a>
-              <a href='#about' className='block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:pl-2 transition-all' onClick={() => setMobileOpen(false)}>About</a>
-              <a href='#projects' className='block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:pl-2 transition-all' onClick={() => setMobileOpen(false)}>Projects</a>
-              <a href='#certifications' className='block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:pl-2 transition-all' onClick={() => setMobileOpen(false)}>Certifications</a>
-              <a href='#experience' className='block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:pl-2 transition-all' onClick={() => setMobileOpen(false)}>Experience</a>
-              <a href='#contact' className='block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:pl-2 transition-all' onClick={() => setMobileOpen(false)}>Contact</a>
-
-              <button
-                onClick={toggleDarkMode}
-                className='w-full flex items-center justify-between p-2 mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors'
-              >
-                <span>{darkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}</span>
-              </button>
-            </div>
-          )}
-        </div>
       </div>
-    </nav>
+
+      {/* Mobile menu */}
+      <div
+        id='mobile-menu'
+        className={`md:hidden overflow-hidden transition-all duration-slower ease-out-expo
+          ${mobileOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'}`}
+        aria-hidden={!mobileOpen}
+      >
+        <nav className='bg-[var(--color-bg-elevated)] border-t border-[var(--color-border)] px-[var(--space-container)] py-4 flex flex-col gap-1'>
+          {links.map(({ href, label }) => (
+            <a
+              key={href}
+              href={href}
+              onClick={() => setMobileOpen(false)}
+              className='py-3 text-sm font-medium text-fg-muted hover:text-fg transition-colors duration-fast focus-ring rounded-md px-2'
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </header>
   )
 }
 

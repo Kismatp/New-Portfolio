@@ -10,10 +10,9 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className='min-h-screen bg-gray-50 dark:bg-gray-950'>
+    <div className='min-h-screen bg-[var(--color-bg)] text-[var(--color-fg)]'>
       <Navbar />
-      
-      <main className='pt-20'>
+      <main>
         <Hero />
         <About />
         <Projects />
@@ -21,7 +20,6 @@ function App() {
         <Experience />
         <Contact />
       </main>
-      
       <Footer />
     </div>
   )

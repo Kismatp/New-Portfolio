@@ -1,0 +1,9 @@
+model_list:
+  - model_name: nemotron-ultra
+    litellm_params:
+      model: custom_openai/nvidia/nemotron-3-ultra-550b-a55b
+      api_base: https://integrate.api.nvidia.com/v1
+      api_key: os.environ/NVIDIA_API_KEY
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
